@@ -1,0 +1,23 @@
+DECLARE @data NVARCHAR(4000);
+SET @data = N'{
+"employees":
+[      {
+         "name":"Raj",
+         "email":"raj@gmail.com",
+         "age":32
+          
+},
+      {
+         "name":"Mohan",
+         "email":"Mohan@yahoo.com",
+         "age":21
+          
+        }   
+]
+}';
+SELECT JSON_QUERY(@data, '$.employees[0]') AS 'Result
+...................................................................... 
+DECLARE @json_data NVARCHAR(4000) = 
+'{"Id":1,"Brand":"HP",
+       "City":["Laptop","Mobile"]}'
+SELECT JSON_QUERY(@json_data,'$.Name') as Name
